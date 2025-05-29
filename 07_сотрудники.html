@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЦРТ | HR Профиль</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      font-family: 'Myriad Pro', sans-serif;
+      background-color: #ffffff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .employee-list {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 40px;
+      gap: 20px;
+    }
+
+    .employee-card {
+      background-color: #eaf3f5;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      border-radius: 12px;
+      transition: background-color 0.3s ease;
+    }
+
+    .employee-card:hover {
+      background-color: #7fb6b7;
+    }
+
+    .employee-card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 30px;
+    }
+
+    .employee-info {
+      flex-grow: 1;
+    }
+
+    .employee-info h3 {
+      margin: 0;
+      font-size: 22px;
+      color: #002b3d;
+    }
+
+    .employee-info p {
+      margin: 4px 0;
+      font-size: 16px;
+      color: #002b3d;
+    }
+
+    .employee-contacts {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      margin-left: -100px;
+    }
+
+    .employee-contacts div {
+      font-size: 16px;
+      color: #002b3d;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header" style="background-color: #e6eaf1; display: flex; justify-content: space-between; align-items: center; padding: 10px 40px;">
+    <div class="logo" style="display: flex; align-items: center;">
+      <img src="img/ЛОГОТИПЧИК.png" alt="ЦРТ логотип" style="height: 45px; margin-right: 20px;">
+    </div>
+  </div>
+
+  <div style="background-color: #4f9ca5; width: 100%; padding: 10px 40px; display: flex; align-items: center; gap: 20px;">
+    <a href="03_новости.html" style="text-decoration: none;"><button style="background-color: rgba(0, 80, 90, 0.75); color: #fff; padding: 10px 18px; border-radius: 6px; border: none; font-size: 16px; cursor: pointer; box-shadow: inset 0 -2px 4px rgba(0,0,0,0.15);">← Главная</button></a>
+    <input type="text" placeholder="Поиск сотрудника..." style="padding: 8px 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px;">
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const input = document.querySelector("input[type='text']");
+        const cards = document.querySelectorAll(".employee-card");
+
+        input.addEventListener("input", function () {
+          const search = input.value.toLowerCase();
+
+          cards.forEach(card => {
+            const name = card.querySelector(".employee-info h3").textContent.toLowerCase();
+            if (name.includes(search)) {
+              card.style.display = "flex";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+  </div>
+
+  <div class="employee-list">
+    <div class="employee-card"><img src="img/15.WEBP" alt="Фото Афонова"><div class="employee-info"><h3>Афонов Игорь Петрович</h3><p>Начальник отдела</p></div><div class="employee-contacts"><div><strong>Отдел:</strong> Охрана труда</div><div><strong>E-mail:</strong> afonovigor@mail.ru</div><div><strong>Телефон:</strong> +7 (956) 138-79-46</div></div></div>
+    <a href="08_карточка.html">
+      <div class="employee-card"><img src="img/90.jpg" alt="Фото Арефьевой"><div class="employee-info"><h3>Арефьева Ирина Ивановна</h3><p>Ведущий специалист</p></div><div class="employee-contacts"><div><strong>Отдел:</strong> HR</div><div><strong>E-mail:</strong> areff@mail.ru</div><div><strong>Телефон:</strong> +7 (987) 988-09-02</div></div></div>
+    </a>
+    <div class="employee-card"><img src="img/18.WEBP" alt="Фото Белова"><div class="employee-info"><h3>Белов Виктор Романович</h3><p>Младший специалист</p></div><div class="employee-contacts"><div><strong>Отдел:</strong> Закупки</div><div><strong>E-mail:</strong> belovvv@mail.ru</div><div><strong>Телефон:</strong> +7 (947) 912-65-13</div></div></div>
+    <div class="employee-card"><img src="img/19.jpg" alt="Фото Власова"><div class="employee-info"><h3>Власов Николай Артемович</h3><p>Тестировщик</p></div><div class="employee-contacts"><div><strong>Отдел:</strong> QA</div><div><strong>E-mail:</strong> vlasov@mail.ru</div><div><strong>Телефон:</strong> +7 (901) 222-33-44</div></div></div>
+    <div class="employee-card"><img src="img/12.WEBP" alt="Фото Ежовой"><div class="employee-info"><h3>Ежова Алена Ивановна</h3><p>Начальник отдела</p></div><div class="employee-contacts"><div><strong>Отдел:</strong> HR</div><div><strong>E-mail:</strong> alenae@mail.ru</div><div><strong>Телефон:</strong> +7 (999) 123-45-67</div></div></div>
+    <div class="employee-card"><img src="img/20.WEBP" alt="Фото Зуева"><div class="employee-info"><h3>Зуев Павел Анатольевич</h3><p>Менеджер по проектам</p></div><div class="employee-contacts"><div><strong>Отдел:</strong> Управление проектами</div><div><strong>E-mail:</strong> zuyev@mail.ru</div><div><strong>Телефон:</strong> +7 (911) 456-78-90</div></div></div>
+    <div class="employee-card"><img src="img/14.jpg" alt="Фото Кузнецова"><div class="employee-info"><h3>Кузнецов Андрей Валерьевич</h3><p>Старший программист</p></div><div class="employee-contacts"><div><strong>Отдел:</strong> IT</div><div><strong>E-mail:</strong> kuzand@mail.ru</div><div><strong>Телефон:</strong> +7 (902) 555-66-77</div></div></div>
+    <div class="employee-card"><img src="img/17.WEBP" alt="Фото Ларионовой"><div class="employee-info"><h3>Ларионова Дарья Михайловна</h3><p>HR-менеджер</p></div><div class="employee-contacts"><div><strong>Отдел:</strong> HR</div><div><strong>E-mail:</strong> larionova@mail.ru</div><div><strong>Телефон:</strong> +7 (951) 222-77-88</div></div></div>
+    <div class="employee-card"><img src="img/10.jpg" alt="Фото Морозовой"><div class="employee-info"><h3>Морозова Елена Дмитриевна</h3><p>Специалист по документации</p></div><div class="employee-contacts"><div><strong>Отдел:</strong> Делопроизводство</div><div><strong>E-mail:</strong> morozova@mail.ru</div><div><strong>Телефон:</strong> +7 (905) 999-00-11</div></div></div>
+    <div class="employee-card"><img src="img/11.jpg" alt="Фото Орловой"><div class="employee-info"><h3>Орлова Светлана Геннадьевна</h3><p>Специалист по обучению</p></div><div class="employee-contacts"><div><strong>Отдел:</strong> Обучение и развитие</div><div><strong>E-mail:</strong> orlova@mail.ru</div><div><strong>Телефон:</strong> +7 (952) 777-88-99</div></div></div>
+    <div class="employee-card"><img src="img/13.jpg" alt="Фото Романовой"><div class="employee-info"><h3>Романова Виктория Сергеевна</h3><p>Бухгалтер</p></div><div class="employee-contacts"><div><strong>Отдел:</strong> Финансовый</div><div><strong>E-mail:</strong> romanova@mail.ru</div><div><strong>Телефон:</strong> +7 (903) 333-44-55</div></div></div>
+    <div class="employee-card"><img src="img/16.WEBP" alt="Фото Сидорова"><div class="employee-info"><h3>Сидоров Алексей Николаевич</h3><p>Инженер по качеству</p></div><div class="employee-contacts"><div><strong>Отдел:</strong> Контроль качества</div><div><strong>E-mail:</strong> sidorov@mail.ru</div><div><strong>Телефон:</strong> +7 (901) 111-22-33</div></div></div>
+    <div class="employee-card"><img src="img/21.jpg" alt="Фото Тихонова"><div class="employee-info"><h3>Тихонов Владислав Павлович</h3><p>Аналитик</p></div><div class="employee-contacts"><div><strong>Отдел:</strong> Аналитики</div><div><strong>E-mail:</strong> tikhonov@mail.ru</div><div><strong>Телефон:</strong> +7 (904) 777-88-99</div></div></div>
+  </div>
+</body>
+</html>

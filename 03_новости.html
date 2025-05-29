@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЦРТ | HR Портал</title>
+  <style>
+    body, html {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Myriad Pro', sans-serif;
+      background-color: #ffffff;
+    }
+
+    .header {
+      padding: 20px 30px;
+      background-color: #e6eaf1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 60px;
+      margin-right: 15px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      color: #002b3d;
+      margin-left: 0;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .profile img {
+      height: 56px;
+    }
+
+    .dropdown {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 30px;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      width: 280px;
+      text-align: left;
+    }
+
+    .dropdown a {
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #002b3d;
+      font-size: 16px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
+
+    .dropdown a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown a:hover {
+      background-color: #f0f4f7;
+    }
+
+    .container {
+      padding: 60px 80px 140px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .welcome {
+      font-size: 36px;
+      color: #002b3d;
+      margin-bottom: 100px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 100px;
+    }
+
+    .button {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      border: 2px solid #002b3d;
+      border-radius: 12px;
+      padding: 20px;
+      width: 220px;
+      height: 100px;
+      font-size: 20px;
+      color: #002b3d;
+      background-color: #ffffff;
+      cursor: pointer;
+      transition: 0.3s;
+      gap: 8px;
+    }
+
+    .button:hover {
+      background-color: #f0f4f7;
+    }
+
+    .button img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .button span {
+      display: block;
+      text-align: left;
+    }
+
+    .news {
+      max-width: 900px;
+      margin-top: 180px;
+    }
+
+    .news h2 {
+      font-size: 32px;
+      color: #002b3d;
+      font-weight: normal;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .news p {
+      font-size: 20px;
+      color: #002b3d;
+      line-height: 1.8;
+    }
+
+    .illustration {
+      position: fixed;
+      right: 100px;
+      bottom: 100px;
+      width: 750px;
+      z-index: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+  <script>
+    function toggleDropdown() {
+      var dropdown = document.getElementById("profileDropdown");
+      dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.closest('.profile')) {
+        document.getElementById("profileDropdown").style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="img/ЛОГОТИПЧИК.png" alt="ЦРТ логотип">
+    </div>
+    <div class="profile" onclick="toggleDropdown()">
+      <img src="img/5.png" alt="Профиль">
+      профиль
+      <div class="dropdown" id="profileDropdown">
+        <a href="#">Редактировать профиль</a>
+        <a href="#">Настройки уведомлений</a>
+        <a href="#">Сменить пароль</a>
+        <a href="#">Тёмная тема</a>
+        <a href="#">Справка</a>
+        <a href="01_главная.html">Выход</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="welcome">Добрый день, Валерия!</div>
+
+    <div class="buttons">
+      <div onclick="window.location.href='04_текущие.html'" class="button">
+        <img src="img/3.png" alt="Мои задачи">
+        <span>мои задачи</span>
+      </div>
+      <div onclick="window.location.href='07_сотрудники.html'" class="button">
+        <img src="img/1.png" alt="Сотрудники">
+        <span>сотрудники</span>
+      </div>
+      <div onclick="window.location.href='11_трудоустройство.html'" class="button">
+        <img src="img/2.png" alt="Документы">
+        <span>документы</span>
+      </div>
+      <div onclick="window.location.href='13_чаты.html'" class="button">
+        <img src="img/4.png" alt="Чаты">
+        <span>чаты</span>
+      </div>
+    </div>
+
+    <div class="news">
+      <h2>НОВОСТИ</h2>
+      <p>
+        С другой стороны постоянное информационно-проправлений прогрессивного развития.
+        Повседневная практика показывает, что постоянное информационно-пропагандистское
+        обеспечение нашей деятельности играет важную роль в формировании системы обучения
+        кадров, соответствует насущным потребностям.
+      </p>
+    </div>
+  </div>
+
+  <img src="img/новости.png" alt="Иллюстрация" class="illustration">
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЦРТ | Сообщения</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Myriad Pro', sans-serif;
+      background-color: #ffffff;
+      overflow: hidden;
+    }
+
+    .header {
+      background-color: #dce0ed;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+    }
+
+    .header img {
+      height: 45px;
+      margin-right: 20px;
+      margin-top: -10px;
+    }
+
+    .top-bar {
+      background-color: #4f9ca5;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      gap: 20px;
+    }
+
+    .top-bar .home-button {
+      background-color: rgba(0, 80, 90, 0.75);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 16px;
+      box-shadow: inset 0 -2px 4px rgba(0,0,0,0.15);
+    }
+
+    .top-bar input {
+      height: 32px;
+      width: 200px;
+      font-size: 16px;
+      padding: 0 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .chat-list {
+      background-color: #e8f1f9;
+      width: 460px;
+      height: calc(100vh - 120px);
+      overflow-y: auto;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .chat-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      cursor: pointer;
+      background-color: #dbe6f0;
+      transition: background-color 0.2s;
+    }
+
+    .chat-item:hover {
+      background-color: #cfdbe6;
+    }
+
+    .chat-item.linked {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .chat-content {
+      flex-grow: 1;
+    }
+
+    .chat-name {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .chat-preview {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .chat-notification {
+      background-color: #4f9ca5;
+      color: white;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      margin-left: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="header" style="background-color: #e6eaf1; display: flex; justify-content: space-between; align-items: center; padding: 10px 40px;">
+    <div class="logo" style="display: flex; align-items: center;">
+      <img src="img/ЛОГОТИПЧИК.png" alt="ЦРТ логотип" style="height: 45px; margin-right: 20px;">
+    </div>
+  </div>
+
+  <div class="top-bar">
+    <a href="03_новости.html" class="home-button">← Главная</a>
+    <input type="text" placeholder="Поиск...">
+  </div>
+
+  <div class="chat-list">
+    <a href="14_чаты1.html" class="chat-item linked">
+      <div class="avatar"><img src="img/90.jpg" alt="user"></div>
+      <div class="chat-content">
+        <div class="chat-name">Арефьева Ирина Ивановна</div>
+        <div class="chat-preview">Добрый день! В связи с изменением своих...</div>
+      </div>
+      <div class="chat-notification">1</div>
+    </a>
+
+    <div class="chat-item">
+      <div class="avatar"><img src="img/100.jpg" alt="user"></div>
+      <div class="chat-content">
+        <div class="chat-name">ЧАТ ЦРТ</div>
+        <div class="chat-preview">Уважаемые коллеги! Прошу пройти тест...</div>
+      </div>
+      <div class="chat-notification">1</div>
+    </div>
+
+    <div class="chat-item">
+      <div class="avatar"><img src="img/17.WEBP" alt="user"></div>
+      <div class="chat-content">
+        <div class="chat-name">Ларинова Дарья Михайловна</div>
+        <div class="chat-preview">Здравствуйте! Направляю Вам свои...</div>
+      </div>
+      <div class="chat-notification">1</div>
+    </div>
+
+    <div class="chat-item">
+      <div class="avatar"><img src="img/18.WEBP" alt="user"></div>
+      <div class="chat-content">
+        <div class="chat-name">Белов Виктор Романович</div>
+        <div class="chat-preview">Хорошо</div>
+      </div>
+    </div>
+
+    <div class="chat-item">
+      <div class="avatar"><img src="img/88.jpg" alt="user"></div>
+      <div class="chat-content">
+        <div class="chat-name">ЧАТ HR</div>
+        <div class="chat-preview">Хорошо</div>
+      </div>
+    </div>
+
+    <div class="chat-item">
+      <div class="avatar"><img src="img/12.WEBP" alt="user"></div>
+      <div class="chat-content">
+        <div class="chat-name">Ежова Алёна Ивановна</div>
+        <div class="chat-preview">Согласуйте, пожалуйста задачу в HR</div>
+      </div>
+    </div>
+
+    <div class="chat-item">
+      <div class="avatar"><img src="img/16.WEBP" alt="user"></div>
+      <div class="chat-content">
+        <div class="chat-name">Сидоров Алексей Николаевич</div>
+        <div class="chat-preview">Спасибо!</div>
+      </div>
+    </div>
+
+    <div class="chat-item">
+      <div class="avatar"><img src="img/15.WEBP" alt="user"></div>
+      <div class="chat-content">
+        <div class="chat-name">Афонов Игорь Петрович</div>
+        <div class="chat-preview">Хорошо</div>
+      </div>
+    </div>
+
+    <div class="chat-item">
+      <div class="avatar"><img src="img/10.jpg" alt="user"></div>
+      <div class="chat-content">
+        <div class="chat-name">Морозова Елена Дмитриевна</div>
+        <div class="chat-preview">Документы на подпись отправлены. Проверьте...</div>
+      </div>
+    </div>
+
+    <div class="chat-item">
+      <div class="avatar"><img src="img/77.jpg" alt="user"></div>
+      <div class="chat-content">
+        <div class="chat-name">ЧАТ IT-отдел</div>
+        <div class="chat-preview">Сервер будет перезагружен сегодня в 22:00</div>
+      </div>
+    </div>
+
+    <div class="chat-item">
+      <div class="avatar"><img src="img/14.jpg" alt="user"></div>
+      <div class="chat-content">
+        <div class="chat-name">Кузнецов Андрей Валерьевич</div>
+        <div class="chat-preview">Уточните, пожалуйста, сроки сдачи отчета</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

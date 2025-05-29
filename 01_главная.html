@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЦРТ | HR Портал</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: 'Myriad Pro', sans-serif;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    video.bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 20px 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 60px;
+      margin-right: 15px;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: calc(100vh - 160px);
+      position: relative;
+      z-index: 2;
+    }
+
+    .welcome {
+      font-size: 44px;
+      font-weight: 500;
+      color: #002b3d;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      max-width: 650px;
+      font-size: 18px;
+      color: #002b3d;
+      margin-bottom: 60px;
+      margin-top: 20px;
+      line-height: 1.3;
+    }
+
+    .enter-button {
+      background-color: #1f7a8c;
+      color: #ffffff;
+      border: none;
+      width: 200px;
+      height: 60px;
+      font-size: 20px;
+      font-weight: normal;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .enter-button:hover {
+      background-color: #18616e;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop class="bg-video">
+    <source src="img/ВИДЕО.mp4" type="video/mp4">
+    Ваш браузер не поддерживает видео фон.
+  </video>
+
+  <div class="header">
+    <div class="logo">
+      <img src="img/ЛОГОТИПЧИК.png">
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="welcome">ДОБРО ПОЖАЛОВАТЬ В HR ПОРТАЛ</div>
+
+    <div class="description">
+      Наш корпоративный портал предоставляет все необходимые инструменты для сотрудников отдела кадров. Здесь вы найдете задачи, документы, чаты и новости, чтобы быть всегда в курсе происходящего.
+    </div>
+
+    <a href="02_вход.html">
+      <button class="enter-button">ВХОД</button>
+    </a>
+  </div>
+</body>
+</html>

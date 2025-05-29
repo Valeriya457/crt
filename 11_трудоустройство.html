@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ЦРТ | Трудоустройство</title>
+  <style>
+    @font-face {
+      font-family: 'Myriad Pro';
+      src: local('Myriad Pro'), local('MyriadPro-Regular');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Myriad Pro', sans-serif;
+      background-color: #f8f9fa;
+      color: #2b2b2b;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    header {
+      background-color: #e6eaf1;
+      display: flex;
+      align-items: center;
+      padding: 10px 30px;
+      height: 60px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      color: #2b2b2b;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    .searchbar {
+      background-color: rgba(31, 122, 140, 0.76);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      height: 60px;
+    }
+
+    .searchbar a {
+      background-color: rgba(0, 80, 90, 0.75);
+      color: #ffffff;
+      font-weight: normal;
+      padding: 10px 18px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      text-decoration: none;
+      box-shadow: inset 0 -2px 4px rgba(0,0,0,0.15);
+    }
+
+    .searchbar input {
+      background-color: #ffffff;
+      color: #2b2b2b;
+      width: 250px;
+      padding: 7px 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 15px;
+    }
+
+    .layout {
+      display: flex;
+      flex: 1;
+      height: calc(100vh - 120px);
+    }
+
+    .sidebar {
+      width: 360px;
+      background-color: #eaf9fb;
+      padding: 80px 0px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sidebar button {
+      background-color: rgba(31, 122, 140, 0.76);
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      padding: 22px 28px;
+      font-size: 18px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+      width: 300px;
+      transition: background-color 0.3s ease;
+      font-weight: normal;
+    }
+
+    .sidebar button:hover {
+      background-color: rgba(31, 122, 140, 0.9);
+    }
+
+    .sidebar button.active {
+      background-color: rgba(31, 122, 140, 0.9);
+      color: #fff;
+      border-left: 5px solid black;
+    }
+
+    .sidebar-link {
+      background-color: rgba(31, 122, 140, 0.76);
+      color: #ffffff;
+      border-radius: 10px;
+      padding: 22px 28px;
+      font-size: 18px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+      width: 300px;
+      transition: background-color 0.3s ease;
+      font-weight: normal;
+      text-decoration: none;
+    }
+
+    .sidebar-link:hover {
+      background-color: rgba(31, 122, 140, 0.9);
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px 80px 80px 40px;
+      background-color: #ffffff;
+      overflow-y: auto;
+    }
+
+    .content h2 {
+      font-size: 32px;
+      margin-top: -20px;
+      margin-bottom: 25px;
+      font-weight: normal;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #cbd9df;
+      border-radius: 10px;
+      padding: 20px 30px;
+      margin-bottom: 30px;
+      background-color: #f9f9f9;
+      max-width: 1500px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .card .info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .card .info img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .card .info-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card .info-text .title {
+      font-weight: normal;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .card .info-text .desc {
+      color: #555;
+      font-size: 16px;
+    }
+
+    .card a {
+      background-color: rgba(31, 122, 140, 0.76);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      font-weight: normal;
+    }
+
+    .card a:hover {
+      background-color: rgba(31, 122, 140, 0.9);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/ЛОГОТИПЧИК.png" style="height: 60px; width: auto; max-width: 100%;">
+    </div>
+  </header>
+
+  <div class="searchbar">
+    <a href="03_новости.html">&larr; Главная</a>
+    <input type="text" placeholder="Поиск...">
+  </div>
+
+  <div class="layout">
+    <div class="sidebar">
+      <button class="active">📄 Трудоустройство</button>
+      <button>📦 Увольнение</button>
+      <button>📅 Отпуск</button>
+      <button>🔁 Перевод</button>
+      <a href="12_прочее.html" class="sidebar-link">▶ Прочее</a>
+    </div>
+    <div class="content">
+      <h2>Трудоустройство</h2>
+
+      <div class="card">
+        <div class="info">
+          <img src="img/20.png" alt="icon">
+          <div class="info-text">
+            <div class="title">Анкета</div>
+            <div class="desc">Документ, содержащий основную информацию о сотруднике</div>
+          </div>
+        </div>
+        <a href="img/анкета.pdf" target="_blank">Открыть документ</a>
+      </div>
+
+      <div class="card">
+        <div class="info">
+          <img src="img/55.png" alt="icon">
+          <div class="info-text">
+            <div class="title">Заявление о приеме на работу</div>
+            <div class="desc">Заявление с просьбой принять на работу</div>
+          </div>
+        </div>
+        <a href="#">Открыть документ</a>
+      </div>
+
+      <div class="card">
+        <div class="info">
+          <img src="img/30.png" alt="icon">
+          <div class="info-text">
+            <div class="title">Приказ (распоряжение) о приеме работника на работу (Унифицированная форма N Т-1)</div>
+            <div class="desc">Документ о приеме сотрудника на должность</div>
+          </div>
+        </div>
+        <a href="img/приказ о приеме на работу.pdf" target="_blank">Открыть документ</a>
+      </div>
+
+      <div class="card">
+        <div class="info">
+          <img src="img/80.png" alt="icon">
+          <div class="info-text">
+            <div class="title">Соглашение о неразглашении</div>
+            <div class="desc">Документ о конфиденциальности</div>
+          </div>
+        </div>
+        <a href="#">Открыть документ</a>
+      </div>
+
+      <div class="card">
+        <div class="info">
+          <img src="img/33.png" alt="icon">
+          <div class="info-text">
+            <div class="title">Трудовой договор</div>
+            <div class="desc">Документ, определяющий условия труда</div>
+          </div>
+        </div>
+        <a href="img/трудовой договор.pdf" target="_blank">Открыть документ</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
